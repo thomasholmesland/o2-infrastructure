@@ -29,5 +29,27 @@ Dokumentasjonen genereres fra Docker, Compose og systemd med:
 ```bash
 ./scripts/generate-docs.sh
 
+## Production boundary
 
+`app.o2method.com` runs on a separate production VM.
 
+The production VM is business-critical and contains the application used by
+active O2 Method customers. It is not part of the homelab development
+environment.
+
+### Production rules
+
+- No experimental workloads are deployed to the production VM.
+- No automated infrastructure scripts may modify or stop production services.
+- Changes require a verified backup and a documented rollback plan.
+- Development and testing must take place outside the production VM.
+- Production is monitored externally from `o2-core`.
+- Secrets, credentials and customer data must never be committed to Git.
+
+### Environments
+
+| Environment | Purpose | Change policy |
+|---|---|---|
+| Production | `app.o2method.com` and active customer workloads | Controlled changes only |
+| Homelab | Infrastructure, integrations, AI and development | Experimental |
+| Staging | Pre-production validation | To be established |
