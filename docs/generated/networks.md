@@ -1,7 +1,7 @@
 # Docker-nettverk
 
 > Automatisk generert fra `o2-core`  
-> Generert: `2026-07-28T04:39:42+00:00`  
+> Generert: `2026-07-28T04:44:31+00:00`  
 > Server-IP: `192.168.1.241`
 
 Denne filen skal ikke redigeres manuelt.
